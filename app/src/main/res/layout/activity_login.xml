@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="#ffffff"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/symbol_color"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Log In"
+            android:textColor="#004F9F"
+            android:textStyle="bold"
+            android:textSize="40sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/userNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="학번/사번"
+            android:textColor="#575756"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:background="@drawable/logintextbox"
+            android:layout_marginHorizontal="40dp"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/userPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="비밀번호"
+            android:textColor="#575756"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:background="@drawable/logintextbox"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/bluebutton"
+            android:paddingVertical="13dp"
+            android:paddingHorizontal="30dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</LinearLayout>
