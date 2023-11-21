@@ -34,7 +34,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp">
         <TextView
-            android:id="@+id/userNumber"
+            android:id="@+id/userNumber2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20212021"
@@ -73,6 +73,7 @@
         android:orientation="horizontal"
         android:padding="20dp">
         <TextView
+            android:id="@+id/timetable"
             android:layout_width="0dp"
             android:layout_height="206dp"
             android:layout_weight="1"
@@ -91,6 +92,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/ledger"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -104,6 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"/>
             <TextView
+                android:id="@+id/classroom"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -120,7 +123,8 @@
     <HorizontalScrollView
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="75dp">
+        android:layout_height="75dp"
+        android:scrollbars="none">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -133,6 +137,7 @@
                 android:text="ON국민 포털"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 android:padding="10dp"
                 android:background="@drawable/graybutton"/>
             <TextView
@@ -143,6 +148,7 @@
                 android:text="소프트웨어융합대학"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 android:padding="10dp"
                 android:background="@drawable/graybutton"/>
             <TextView
@@ -154,6 +160,7 @@
                 android:text="가상대학"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 android:padding="10dp"
                 android:background="@drawable/graybutton"/>
         </LinearLayout>
