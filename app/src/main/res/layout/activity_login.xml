@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    android:background="#ffffff"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="Log In"
-            android:textColor="#004F9F"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="40sp"/>
     </LinearLayout>
@@ -39,7 +39,7 @@
             android:layout_height="50dp"
             android:hint="학번/사번"
             android:inputType="number"
-            android:textColor="#575756"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:background="@drawable/logintextbox"
@@ -51,7 +51,7 @@
             android:layout_height="50dp"
             android:hint="비밀번호"
             android:inputType="textPassword"
-            android:textColor="#575756"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:background="@drawable/logintextbox"
