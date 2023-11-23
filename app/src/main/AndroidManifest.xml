@@ -27,6 +27,7 @@
                 android:value="" />
         </activity>
         <activity android:name=".ManagerActivity"/>
+        <activity android:name=".StudentActivity"/>
     </application>
 
 </manifest>
