@@ -22,14 +22,20 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(v -> {
-            if (userNumber.getText().length() == 7) {
-                Intent intent = new Intent(getApplicationContext(), ManagerActivity.class);
-                startActivity(intent);
+            String userNum = userNumber.getText().toString();
+            int length = userNum.length();
+            int user = Integer.parseInt(userNum);
+
+            String password = userPassword.getText().toString();
+
+            Intent intent;
+            if (length == 7) {
+                intent = new Intent(getApplicationContext(), ManagerActivity.class);
             }
             else {
-                Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
-                startActivity(intent);
+                intent = new Intent(getApplicationContext(), StudentActivity.class);
             }
+            startActivity(intent);
         });
     }
 }

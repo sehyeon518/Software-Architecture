@@ -1,6 +1,8 @@
 package com.example.kcampusmanager;
 
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -15,6 +17,8 @@ public class StudentActivity extends AppCompatActivity {
     ImageView logout;
     TextView studentNumber;
     TextView timetable, writeLedger, helperCheck;
+    TextView portal, cs, ecampus, sugang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +29,30 @@ public class StudentActivity extends AppCompatActivity {
         timetable = findViewById(R.id.timetable);
         writeLedger = findViewById(R.id.writeLedger);
         helperCheck = findViewById(R.id.helperCheck);
+        portal = findViewById(R.id.portal);
+        cs = findViewById(R.id.cs);
+        ecampus = findViewById(R.id.ecampus);
+        sugang = findViewById(R.id.sugang);
 
         setTextBold();
 
         logout.setOnClickListener(v -> {
             finish();
+        });
+        portal.setOnClickListener(v -> {
+            Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://portal.kookmin.ac.kr"));
+        });
+        cs.setOnClickListener(v -> {
+            Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://cs.kookmin.ac.kr"));
+            startActivity(urlintent);
+        });
+        ecampus.setOnClickListener(v -> {
+            Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ecampus.kookmin.ac.kr"));
+            startActivity(urlintent);
+        });
+        sugang.setOnClickListener(v -> {
+            Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://sugang.kookmin.ac.kr"));
+            startActivity(urlintent);
         });
     }
 
