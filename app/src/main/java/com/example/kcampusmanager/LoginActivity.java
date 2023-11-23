@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,14 +29,18 @@ public class LoginActivity extends AppCompatActivity {
 
             String password = userPassword.getText().toString();
 
-            Intent intent;
             if (length == 7) {
-                intent = new Intent(getApplicationContext(), ManagerActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ManagerActivity.class);
+                startActivity(intent);
+            }
+            else if (length == 8) {
+                Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
+                startActivity(intent);
             }
             else {
-                intent = new Intent(getApplicationContext(), StudentActivity.class);
+                Toast.makeText(getApplicationContext(), "올바른 학번/사번이 아닙니다", Toast.LENGTH_SHORT).show();
             }
-            startActivity(intent);
+
         });
     }
 }
