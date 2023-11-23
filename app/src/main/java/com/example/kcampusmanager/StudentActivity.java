@@ -41,6 +41,7 @@ public class StudentActivity extends AppCompatActivity {
         });
         portal.setOnClickListener(v -> {
             Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://portal.kookmin.ac.kr"));
+            startActivity(urlintent);
         });
         cs.setOnClickListener(v -> {
             Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://cs.kookmin.ac.kr"));
