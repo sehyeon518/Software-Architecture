@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".ManagerActivity"/>
         <activity android:name=".StudentActivity"/>
+        <activity android:name=".ClassScheduleActivity"/>
     </application>
 
 </manifest>

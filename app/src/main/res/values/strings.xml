@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KCampusManager</string>
+    <string-array name="classroom_array">
+        <item>미래관2층31호실</item>
+        <item>미래관2층32호실</item>
+        <item>미래관4층24호실</item>
+        <item>미래관4층45호실</item>
+        <item>미래관4층47호실</item>
+        <item>미래관6층11호실</item>
+    </string-array>
 </resources>
