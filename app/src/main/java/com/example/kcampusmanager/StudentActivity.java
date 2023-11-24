@@ -42,6 +42,10 @@ public class StudentActivity extends AppCompatActivity {
         logout.setOnClickListener(v -> {
             finish();
         });
+        timetable.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), ClassScheduleActivity.class);
+            startActivity(intent);
+        });
         portal.setOnClickListener(v -> {
             Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://portal.kookmin.ac.kr"));
             startActivity(urlintent);
