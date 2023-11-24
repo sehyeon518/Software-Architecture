@@ -34,6 +34,9 @@ public class StudentActivity extends AppCompatActivity {
         ecampus = findViewById(R.id.ecampus);
         sugang = findViewById(R.id.sugang);
 
+        Intent managerNumber = getIntent();
+        studentNumber.setText(String.valueOf(managerNumber.getIntExtra("학번", 20230000)));
+
         setTextBold();
 
         logout.setOnClickListener(v -> {

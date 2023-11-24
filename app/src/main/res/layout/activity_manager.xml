@@ -34,7 +34,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp">
         <TextView
-            android:id="@+id/userNumber2"
+            android:id="@+id/managerNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20212021"

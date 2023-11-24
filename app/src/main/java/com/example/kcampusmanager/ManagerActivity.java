@@ -26,13 +26,16 @@ public class ManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manager);
 
         logout = findViewById(R.id.logout);
-        userNumber = findViewById(R.id.userNumber2);
+        userNumber = findViewById(R.id.managerNumber);
         timetable = findViewById(R.id.timetable);
         ledger = findViewById(R.id.ledger);
         classroom = findViewById(R.id.classroom);
         portal = findViewById(R.id.portal);
         cs = findViewById(R.id.cs);
         ecampus = findViewById(R.id.ecampus);
+
+        Intent managerNumber = getIntent();
+        userNumber.setText(String.valueOf(managerNumber.getIntExtra("사번", 2023000)));
 
         setTextBold();
 

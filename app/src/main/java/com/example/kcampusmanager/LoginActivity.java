@@ -24,17 +24,24 @@ public class LoginActivity extends AppCompatActivity {
 
         loginButton.setOnClickListener(v -> {
             String userNum = userNumber.getText().toString();
+            if (userNum.trim().isEmpty()) {
+                Toast.makeText(getApplicationContext(), "학번/사번을 입력하세요", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             int length = userNum.length();
             int user = Integer.parseInt(userNum);
 
             String password = userPassword.getText().toString();
 
-            if (length == 7) {
+            if (length == 7 && user > 1000000 && user < 2024000) {
                 Intent intent = new Intent(getApplicationContext(), ManagerActivity.class);
+                intent.putExtra("사번", user);
                 startActivity(intent);
             }
-            else if (length == 8) {
+            else if (length == 8 && user > 10000000 && user < 20240000) {
                 Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
+                intent.putExtra("학번", user);
                 startActivity(intent);
             }
             else {
