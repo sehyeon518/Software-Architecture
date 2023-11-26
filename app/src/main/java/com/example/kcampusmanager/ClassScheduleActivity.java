@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ public class ClassScheduleActivity extends AppCompatActivity {
 
     ImageView back;
     Spinner spinner;
+    LinearLayout swap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,11 @@ public class ClassScheduleActivity extends AppCompatActivity {
         back = findViewById(R.id.back);
         back.setOnClickListener(v -> {
             finish();
+        });
+
+        swap = findViewById(R.id.swap);
+        swap.setOnClickListener(v -> {
+            ; // TODO 헬퍼 시간표 swap
         });
 
         spinner = (Spinner) findViewById(R.id.classroom_spinner);
