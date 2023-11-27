@@ -19,6 +19,8 @@ public class StudentActivity extends AppCompatActivity {
     TextView timetable, writeLedger, helperCheck;
     TextView portal, cs, ecampus, sugang;
 
+    int userNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +36,9 @@ public class StudentActivity extends AppCompatActivity {
         ecampus = findViewById(R.id.ecampus);
         sugang = findViewById(R.id.sugang);
 
-        Intent managerNumber = getIntent();
-        studentNumber.setText(String.valueOf(managerNumber.getIntExtra("학번", 20230000)));
+        Intent getIntent = getIntent();
+        userNumber = getIntent.getIntExtra("학번", 20230000);
+        studentNumber.setText(String.valueOf(userNumber));
 
         setTextBold();
 
@@ -48,6 +51,7 @@ public class StudentActivity extends AppCompatActivity {
         });
         writeLedger.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), LedgerHistoryActivity.class);
+            intent.putExtra("학번", userNumber);
             startActivity(intent);
         });
         portal.setOnClickListener(v -> {

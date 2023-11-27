@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ManagerActivity extends AppCompatActivity {
 
     ImageView logout;
-    TextView userNumber;
+    TextView managerNumber;
     TextView timetable,  ledger, classroom;
     TextView portal, cs, ecampus;
 
@@ -26,7 +25,7 @@ public class ManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manager);
 
         logout = findViewById(R.id.logout);
-        userNumber = findViewById(R.id.managerNumber);
+        managerNumber = findViewById(R.id.managerNumber);
         timetable = findViewById(R.id.timetable);
         ledger = findViewById(R.id.ledger);
         classroom = findViewById(R.id.classroom);
@@ -34,8 +33,8 @@ public class ManagerActivity extends AppCompatActivity {
         cs = findViewById(R.id.cs);
         ecampus = findViewById(R.id.ecampus);
 
-        Intent managerNumber = getIntent();
-        userNumber.setText(String.valueOf(managerNumber.getIntExtra("사번", 2023000)));
+        Intent userNumber = getIntent();
+        this.managerNumber.setText(String.valueOf(userNumber.getIntExtra("사번", 2023000)));
 
         setTextBold();
 
