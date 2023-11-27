@@ -29,6 +29,7 @@
         <activity android:name=".ManagerActivity"/>
         <activity android:name=".StudentActivity"/>
         <activity android:name=".ClassScheduleActivity"/>
+        <activity android:name=".InquireLedgerActivity"/>
     </application>
 
 </manifest>
