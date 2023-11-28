@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SubmitLedgerActivity extends AppCompatActivity {
 
     ImageView back;
-    TextView studentNumber;
+    TextView studentNumber, submit;
     Spinner spinner;
 
     int userNumber;
@@ -32,6 +32,7 @@ public class SubmitLedgerActivity extends AppCompatActivity {
         back = findViewById(R.id.back);
         studentNumber = findViewById(R.id.userNumber);
         spinner = findViewById(R.id.classroom_spinner);
+        submit = findViewById(R.id.submit);
 
         back.setOnClickListener(v -> {
             finish();
@@ -42,6 +43,10 @@ public class SubmitLedgerActivity extends AppCompatActivity {
                 R.array.classroom_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        submit.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
