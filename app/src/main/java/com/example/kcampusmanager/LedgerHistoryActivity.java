@@ -30,7 +30,9 @@ public class LedgerHistoryActivity extends AppCompatActivity {
             finish();
         });
         floating.setOnClickListener(v -> {
-            // TODO 장부 신청하기 액티비티
+            Intent intent = new Intent(getApplicationContext(), SubmitLedgerActivity.class);
+            intent.putExtra("학번", userNumber);
+            startActivity(intent);
         });
     }
 }
