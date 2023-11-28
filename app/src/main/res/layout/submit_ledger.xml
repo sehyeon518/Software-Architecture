@@ -61,6 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="강의실: "
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -78,18 +79,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="날짜/시간: "
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:text="2000/01/01"
                 android:textSize="20sp"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/calendar_month"/>
         </LinearLayout>
         <LinearLayout
@@ -100,6 +104,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
                 android:text="사유: "
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
@@ -120,6 +125,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"/>
     <TextView
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
