@@ -84,6 +84,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
+                android:id="@+id/borrowDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -91,6 +92,7 @@
                 android:text="2000/01/01"
                 android:textSize="20sp"/>
             <ImageView
+                android:id="@+id/calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
