@@ -1,11 +1,9 @@
 package com.example.kcampusmanager;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +56,6 @@ public class LedgerHistoryActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         List<LedgerItem> ledgerItems = getLedgerItems();
-        Toast.makeText(getApplicationContext(), "학번/사번을 입력하세요", Toast.LENGTH_SHORT).show();
 
         if (requestCode == 100 && resultCode == RESULT_OK) {
             if (data != null) {
