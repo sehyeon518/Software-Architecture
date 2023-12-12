@@ -24,15 +24,20 @@
             android:textColor="@color/black"
             android:textSize="20sp"/>
     </FrameLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/light_gray"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,30 +45,35 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"/>
+
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
-        <LinearLayout
+
+        <ImageButton
             android:id="@+id/swap"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/arrow_back"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/arrow_forward"/>
-        </LinearLayout>
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:src="@drawable/ic_schedule_arrow" />
     </LinearLayout>
+
     <Spinner
         android:id="@+id/helper_spinner"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="end"
         android:layout_marginHorizontal="20dp"
-        android:background="@color/light_gray"/>
+        android:background="@drawable/shape_schedule_spinner_rectangle"/>
+
+    <ImageView
+        android:id="@+id/iv_helper_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/img_schedule_helper_net" />
+
 </LinearLayout>
