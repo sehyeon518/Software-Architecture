@@ -58,7 +58,7 @@
             android:id="@+id/swap"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="android/color/transparent"
+            android:background="@color/white"
             android:orientation="horizontal"
             android:src="@drawable/ic_schedule_arrow" />
     </LinearLayout>
