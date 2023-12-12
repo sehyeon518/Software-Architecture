@@ -1,20 +1,11 @@
 package com.example.kcampusmanager;
 
-import static java.lang.String.valueOf;
-
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Calendar;
 
 public class HelperCheckinActivity extends AppCompatActivity {
 
@@ -38,11 +29,12 @@ public class HelperCheckinActivity extends AppCompatActivity {
         helper_class = findViewById(R.id.helper_class);
         helper_professor = findViewById(R.id.helper_professor);
         helper_schedule = findViewById(R.id.helper_schedule);
+        checkin = findViewById(R.id.checkin);
 
         back.setOnClickListener(v -> {
             finish();
         });
-        helper_name.setText(String.valueOf(userNumber) + " 헬퍼");
+        helper_name.setText(userNumber + " 헬퍼");
         checkin.setOnClickListener(v -> {
             // TODO sharedpreference
             finish();
