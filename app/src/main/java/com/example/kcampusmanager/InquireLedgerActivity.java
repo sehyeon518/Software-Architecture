@@ -12,7 +12,7 @@ public class InquireLedgerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inquire_ledger);
+        setContentView(R.layout.activity_inquire_ledger);
 
         back = findViewById(R.id.back);
         back.setOnClickListener(v -> {

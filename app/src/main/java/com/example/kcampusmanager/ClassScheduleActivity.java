@@ -19,7 +19,7 @@ public class ClassScheduleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.classroom_schedule);
+        setContentView(R.layout.activity_classroom_schedule);
 
         back = findViewById(R.id.back);
         back.setOnClickListener(v -> {

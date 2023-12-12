@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,7 +28,7 @@ public class SubmitLedgerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.submit_ledger);
+        setContentView(R.layout.activity_submit_ledger);
 
         Intent getIntent = getIntent();
         userNumber = getIntent.getIntExtra("학번", 20230000);

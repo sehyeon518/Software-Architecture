@@ -18,7 +18,7 @@ public class LedgerHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ledger_history);
+        setContentView(R.layout.activity_ledger_history);
 
         Intent getIntent = getIntent();
         userNumber = getIntent.getIntExtra("학번", 20230000);
