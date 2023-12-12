@@ -32,6 +32,7 @@
         <activity android:name=".InquireLedgerActivity"/>
         <activity android:name=".LedgerHistoryActivity"/>
         <activity android:name=".SubmitLedgerActivity"/>
+        <activity android:name=".HelperCheckinActivity"/>
     </application>
 
 </manifest>
