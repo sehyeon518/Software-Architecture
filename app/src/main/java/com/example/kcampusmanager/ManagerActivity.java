@@ -49,6 +49,10 @@ public class ManagerActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), InquireLedgerActivity.class);
             startActivity(intent);
         });
+        classroom.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), ClassOpenCloseActivity.class);
+            startActivity(intent);
+        });
         portal.setOnClickListener(v -> {
             Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://portal.kookmin.ac.kr"));
             startActivity(urlintent);
