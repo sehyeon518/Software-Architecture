@@ -61,7 +61,7 @@
     </LinearLayout>
     <Spinner
         android:id="@+id/classroom_spinner"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="end"
         android:layout_marginHorizontal="20dp"

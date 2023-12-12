@@ -11,7 +11,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ClassScheduleActivity extends AppCompatActivity {
+public class HelperScheduleActivity extends AppCompatActivity {
 
     ImageView back;
     Spinner spinner;
@@ -20,7 +20,7 @@ public class ClassScheduleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classroom_schedule);
+        setContentView(R.layout.activity_helper_schedule);
 
         back = findViewById(R.id.back);
         back.setOnClickListener(v -> {
@@ -29,14 +29,13 @@ public class ClassScheduleActivity extends AppCompatActivity {
 
         swap = findViewById(R.id.swap);
         swap.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), HelperScheduleActivity.class);
-            startActivity(intent);
+            finish();
         });
 
-        spinner = (Spinner) findViewById(R.id.classroom_spinner);
+        spinner = (Spinner) findViewById(R.id.helper_spinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.classroom_array, android.R.layout.simple_spinner_item);
+                R.array.helper_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }

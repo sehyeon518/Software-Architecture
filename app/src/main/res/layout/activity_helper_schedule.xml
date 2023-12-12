@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LedgerHistoryActivity">
+    tools:context=".HelperScheduleActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,7 +20,7 @@
             android:layout_height="wrap_content"
             android:paddingVertical="15dp"
             android:gravity="center"
-            android:text="장부 내역"
+            android:text="헬퍼 시간표"
             android:textColor="@color/black"
             android:textSize="20sp"/>
     </FrameLayout>
@@ -32,30 +31,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/graystokebutton"
+        android:orientation="horizontal"
         android:layout_margin="20dp">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="이전 신청 내역"
+            android:text="2023년 2학기"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-        <ListView
-            android:id="@+id/listview_ledger_history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"/>
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/swap"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow_back"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow_forward"/>
+        </LinearLayout>
     </LinearLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating"
+    <Spinner
+        android:id="@+id/helper_spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:src="@drawable/draw_white"
-        android:layout_margin="16dp"
-        android:contentDescription="신청하기"
-        app:backgroundTint="@color/orange"/>
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/light_gray"/>
 </LinearLayout>

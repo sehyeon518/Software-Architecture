@@ -9,4 +9,12 @@
         <item>미래관4층47호실</item>
         <item>미래관6층11호실</item>
     </string-array>
+    <string-array name="helper_array">
+        <item>컴퓨터프로그래밍-김언지</item>
+        <item>컴퓨터프로그래밍-김지윤</item>
+        <item>소프트웨어프로젝트II-이세현</item>
+        <item>알고리즘-안채영</item>
+        <item>소프트웨어아키텍처-최은미</item>
+        <item>데이터베이스-강서영</item>
+    </string-array>
 </resources>
