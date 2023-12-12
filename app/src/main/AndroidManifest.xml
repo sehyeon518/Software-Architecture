@@ -33,6 +33,8 @@
         <activity android:name=".LedgerHistoryActivity"/>
         <activity android:name=".SubmitLedgerActivity"/>
         <activity android:name=".ClassOpenCloseActivity"/>
+        <activity android:name=".HelperCheckinActivity"/>
+        <activity android:name=".HelperScheduleActivity"/>
     </application>
 
 </manifest>

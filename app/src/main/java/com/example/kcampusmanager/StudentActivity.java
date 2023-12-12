@@ -54,6 +54,11 @@ public class StudentActivity extends AppCompatActivity {
             intent.putExtra("학번", userNumber);
             startActivity(intent);
         });
+        helperCheck.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), HelperCheckinActivity.class);
+            intent.putExtra("학번", userNumber);
+            startActivity(intent);
+        });
         portal.setOnClickListener(v -> {
             Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://portal.kookmin.ac.kr"));
             startActivity(urlintent);

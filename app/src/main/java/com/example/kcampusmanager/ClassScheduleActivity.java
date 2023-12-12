@@ -1,5 +1,6 @@
 package com.example.kcampusmanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +31,8 @@ public class ClassScheduleActivity extends AppCompatActivity {
 
         swap = findViewById(R.id.swap);
         swap.setOnClickListener(v -> {
-            ; // TODO 헬퍼 시간표 swap
+            Intent intent = new Intent(getApplicationContext(), HelperScheduleActivity.class);
+            startActivity(intent);
         });
 
         spinner = findViewById(R.id.classroom_spinner);
