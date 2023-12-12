@@ -29,25 +29,25 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            int length = userNum.length();
+            int userLength = userNum.length();
             int user = Integer.parseInt(userNum);
 
             String password = userPassword.getText().toString();
+            int pwLength = password.length();
 
-            if (length == 7 && user > 1000000 && user < 2024000) {
+            if (userLength == 7 && user > 1000000 && user < 2024000 && pwLength >= 6 && pwLength <= 12) {
                 Intent intent = new Intent(getApplicationContext(), ManagerActivity.class);
                 intent.putExtra("사번", user);
                 startActivity(intent);
             }
-            else if (length == 8 && user > 10000000 && user < 20240000) {
+            else if (userLength == 8 && user > 10000000 && user < 20240000 && pwLength >= 6 && pwLength <= 12) {
                 Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
                 intent.putExtra("학번", user);
                 startActivity(intent);
             }
             else {
-                Toast.makeText(getApplicationContext(), "올바른 학번/사번이 아닙니다", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "올바른 학번/사번/비밀번호가 아닙니다", Toast.LENGTH_SHORT).show();
             }
-
         });
     }
 }
