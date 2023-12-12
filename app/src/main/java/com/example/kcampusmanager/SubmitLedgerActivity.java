@@ -8,18 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class SubmitLedgerActivity extends AppCompatActivity {
 
     ImageView back, calendar;
     TextView studentNumber, borrowDate, submit;
+    EditText reason;
     Spinner spinner;
 
     int userNumber;
@@ -38,6 +43,7 @@ public class SubmitLedgerActivity extends AppCompatActivity {
         spinner = findViewById(R.id.classroom_spinner);
         borrowDate = findViewById(R.id.borrowDate);
         calendar = findViewById(R.id.calendar);
+        reason = findViewById(R.id.reason);
         submit = findViewById(R.id.submit);
 
         back.setOnClickListener(v -> {
@@ -51,6 +57,21 @@ public class SubmitLedgerActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         submit.setOnClickListener(v -> {
+            String selectedClassroom = spinner.getSelectedItem().toString();
+            String selectedDate = borrowDate.getText().toString();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+            Date parsedDate = null;
+            try {
+                parsedDate = sdf.parse(selectedDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String borrowReason = reason.getText().toString();
+            LedgerItem newLedger = new LedgerItem(4, userNumber, selectedClassroom, parsedDate, "대기", borrowReason);
+
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("newLedger", newLedger);
+            setResult(RESULT_OK, resultIntent);
             finish();
         });
 
@@ -68,6 +89,7 @@ public class SubmitLedgerActivity extends AppCompatActivity {
             datePickerDialog.show();
         });
     }
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
