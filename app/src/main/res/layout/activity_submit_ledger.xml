@@ -67,7 +67,7 @@
                 android:textSize="20sp"/>
             <Spinner
                 android:id="@+id/classroom_spinner"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="end"
                 android:background="@color/light_gray"/>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ClassScheduleActivity">
+    tools:context=".HelperScheduleActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:paddingVertical="15dp"
             android:gravity="center"
-            android:text="강의실 시간표"
+            android:text="헬퍼 시간표"
             android:textColor="@color/black"
             android:textSize="20sp"/>
     </FrameLayout>
@@ -60,7 +60,7 @@
         </LinearLayout>
     </LinearLayout>
     <Spinner
-        android:id="@+id/classroom_spinner"
+        android:id="@+id/helper_spinner"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="end"
