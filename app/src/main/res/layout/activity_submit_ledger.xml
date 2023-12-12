@@ -90,6 +90,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="10dp"
                 android:text="2000/01/01"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
             <ImageView
                 android:id="@+id/calendar"
