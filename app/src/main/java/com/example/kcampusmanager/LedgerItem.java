@@ -1,9 +1,10 @@
 package com.example.kcampusmanager;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LedgerItem {
+public class LedgerItem implements Serializable {
     int ledgerNumber;
     int studentNumber;
     String classroomName;
@@ -11,8 +12,8 @@ public class LedgerItem {
     String reservationStatus;
     String reservationReason;
 
-    public LedgerItem(int breakdownNumber, int studentNumber, String classroomName, Date reservationTime, String reservationStatus, String reservationReason) {
-        this.ledgerNumber = breakdownNumber;
+    public LedgerItem(int ledgerNumber, int studentNumber, String classroomName, Date reservationTime, String reservationStatus, String reservationReason) {
+        this.ledgerNumber = ledgerNumber;
         this.studentNumber = studentNumber;
         this.classroomName = classroomName;
         this.reservationTime = reservationTime;
@@ -34,6 +35,10 @@ public class LedgerItem {
 
     public Date getReservationTime() {
         return this.reservationTime;
+    }
+
+    public String getReservationReason() {
+        return this.reservationReason;
     }
 
     public String getFormattedReservationDate() {

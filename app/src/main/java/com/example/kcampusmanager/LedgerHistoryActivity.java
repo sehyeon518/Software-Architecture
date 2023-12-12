@@ -1,10 +1,13 @@
 package com.example.kcampusmanager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,6 +22,8 @@ public class LedgerHistoryActivity extends AppCompatActivity {
     FloatingActionButton floating;
 
     int userNumber;
+
+    private static final int SUBMIT_LEDGER_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +40,9 @@ public class LedgerHistoryActivity extends AppCompatActivity {
             finish();
         });
         floating.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), SubmitLedgerActivity.class);
+            Intent intent = new Intent(this, SubmitLedgerActivity.class);
             intent.putExtra("학번", userNumber);
-            startActivity(intent);
+            startActivityForResult(intent, SUBMIT_LEDGER_REQUEST_CODE);
         });
 
         // 어댑터를 초기화하고 ListView에 연결
@@ -48,13 +53,41 @@ public class LedgerHistoryActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        List<LedgerItem> ledgerItems = getLedgerItems();
+        Toast.makeText(getApplicationContext(), "학번/사번을 입력하세요", Toast.LENGTH_SHORT).show();
+
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            if (data != null) {
+                LedgerItem newLedger = (LedgerItem) data.getSerializableExtra("newLedger");
+
+                if (newLedger != null) {
+                    ledgerItems = addLedgerItem(ledgerItems, newLedger);
+                }
+            }
+        }
+        LedgerAdapter ledgerAdapter = new LedgerAdapter(this, ledgerItems);
+        ListView listView = findViewById(R.id.listview_ledger_history);
+        listView.setAdapter(ledgerAdapter);
+    }
+
     private List<LedgerItem> getLedgerItems() {
         List<LedgerItem> ledgerItems = new ArrayList<>();
 
-        ledgerItems.add(new LedgerItem(1, 20212021, "미래관2층31호실", new Date(2021, 11, 12), "대기", "동아리"));
+        ledgerItems.add(new LedgerItem(3, 20212021, "미래관2층31호실", new Date(2021, 11, 12), "대기", "동아리"));
         ledgerItems.add(new LedgerItem(2, 20222222, "미래관6층11호실", new Date(2021, 10, 11), "승인", "스터디"));
-        ledgerItems.add(new LedgerItem(3, 20222222, "미래관6층11호실", new Date(2021, 10, 15), "거부", "스터디"));
+        ledgerItems.add(new LedgerItem(1, 20222222, "미래관6층11호실", new Date(2021, 10, 15), "거부", "스터디"));
 
+        return ledgerItems;
+    }
+
+    private List<LedgerItem> addLedgerItem(List<LedgerItem> ledgerItems, LedgerItem newLedger) {
+        ledgerItems.add(newLedger);
+        ledgerItems.sort((ledgerItem1, ledgerItem2) ->
+                Integer.compare(ledgerItem2.getLedgerNumber(), ledgerItem1.getLedgerNumber()));
         return ledgerItems;
     }
 }

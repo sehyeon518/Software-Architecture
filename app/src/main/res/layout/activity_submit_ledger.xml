@@ -111,6 +111,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
             <EditText
+                android:id="@+id/reason"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
