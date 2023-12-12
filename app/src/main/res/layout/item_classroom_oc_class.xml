@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="9dp"
-        android:thumb="@drawable/switch_thumb"
+        android:thumb="@drawable/shape_classroom_op_switch_thumb"
         android:track="@drawable/selector_classroom_oc_switch"
         app:layout_constraintBottom_toBottomOf="@id/tv_classroom_name"
         app:layout_constraintEnd_toEndOf="parent"
