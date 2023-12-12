@@ -39,7 +39,7 @@ public class LedgerAdapter extends ArrayAdapter<LedgerItem> {
             ledgerNumberTextView.setText(String.valueOf(ledgerItem.getLedgerNumber()));
             ledgerStatusTextView.setText(ledgerItem.getReservationStatus());
             ledgerClassroomTextView.setText(ledgerItem.getClassroomName());
-            ledgerDateTextView.setText(formatDate(ledgerItem.getReservationTime()));
+            ledgerDateTextView.setText(ledgerItem.getFormattedReservationDate());
 
             if ("승인".equals(ledgerItem.getReservationStatus())) {
                 ledgerStatusTextView.setBackgroundResource(R.drawable.greenbutton);
@@ -58,7 +58,7 @@ public class LedgerAdapter extends ArrayAdapter<LedgerItem> {
             return "";
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("M/dd");
         return sdf.format(date);
     }
 }

@@ -51,9 +51,9 @@ public class LedgerHistoryActivity extends AppCompatActivity {
     private List<LedgerItem> getLedgerItems() {
         List<LedgerItem> ledgerItems = new ArrayList<>();
 
-        ledgerItems.add(new LedgerItem(1, 20212021, "미래관2층31호실", new Date(2021, 12, 12), "대기", "동아리"));
-        ledgerItems.add(new LedgerItem(2, 20222222, "미래관6층11호실", new Date(2021, 11, 11), "승인", "스터디"));
-        ledgerItems.add(new LedgerItem(3, 20222222, "미래관6층11호실", new Date(2021, 11, 15), "거부", "스터디"));
+        ledgerItems.add(new LedgerItem(1, 20212021, "미래관2층31호실", new Date(2021, 11, 12), "대기", "동아리"));
+        ledgerItems.add(new LedgerItem(2, 20222222, "미래관6층11호실", new Date(2021, 10, 11), "승인", "스터디"));
+        ledgerItems.add(new LedgerItem(3, 20222222, "미래관6층11호실", new Date(2021, 10, 15), "거부", "스터디"));
 
         return ledgerItems;
     }
