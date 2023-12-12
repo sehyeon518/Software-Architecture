@@ -45,7 +45,7 @@ public class LedgerHistoryActivity extends AppCompatActivity {
 
         // 어댑터를 초기화하고 ListView에 연결
         List<LedgerItem> ledgerItems = getLedgerItems();
-        LedgerAdapter ledgerAdapter = new LedgerAdapter(this, ledgerItems);
+        PreviousLedgerAdapter ledgerAdapter = new PreviousLedgerAdapter(this, ledgerItems);
         ListView listView = findViewById(R.id.listview_ledger_history);
         listView.setAdapter(ledgerAdapter);
 
@@ -66,7 +66,7 @@ public class LedgerHistoryActivity extends AppCompatActivity {
                 }
             }
         }
-        LedgerAdapter ledgerAdapter = new LedgerAdapter(this, ledgerItems);
+        PreviousLedgerAdapter ledgerAdapter = new PreviousLedgerAdapter(this, ledgerItems);
         ListView listView = findViewById(R.id.listview_ledger_history);
         listView.setAdapter(ledgerAdapter);
     }

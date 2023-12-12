@@ -14,9 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class LedgerAdapter extends ArrayAdapter<LedgerItem> {
+public class PreviousLedgerAdapter extends ArrayAdapter<LedgerItem> {
 
-    public LedgerAdapter(@NonNull Context context, @NonNull List<LedgerItem> ledgerItems) {
+    public PreviousLedgerAdapter(@NonNull Context context, @NonNull List<LedgerItem> ledgerItems) {
         super(context, 0, ledgerItems);
     }
 
