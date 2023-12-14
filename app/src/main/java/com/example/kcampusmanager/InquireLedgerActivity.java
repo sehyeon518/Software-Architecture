@@ -56,9 +56,9 @@ public class InquireLedgerActivity extends AppCompatActivity {
     private List<LedgerItem> getNewLedgerItems() {
         List<LedgerItem> ledgerItems = new ArrayList<>();
 
-        ledgerItems.add(new LedgerItem(4, 20213043, "미래관2층31호실", new Date(2024, 1, 12), "대기", "동아리 활동"));
-        ledgerItems.add(new LedgerItem(5, 20213043, "미래관6층11호실", new Date(2024, 2, 25), "대기", "스터디"));
-        ledgerItems.add(new LedgerItem(6, 20213043, "미래관6층11호실", new Date(2024, 3, 2), "대기", "학생회의"));
+        ledgerItems.add(new LedgerItem(4, 20201234, "미래관2층31호실", new Date(2024, 1, 12), "대기", "동아리 활동"));
+        ledgerItems.add(new LedgerItem(5, 20191234, "미래관6층11호실", new Date(2024, 2, 25), "대기", "스터디"));
+        ledgerItems.add(new LedgerItem(6, 20181234, "미래관6층11호실", new Date(2024, 3, 2), "대기", "학생회의"));
 
         return ledgerItems;
     }
