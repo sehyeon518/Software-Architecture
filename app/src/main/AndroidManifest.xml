@@ -35,6 +35,8 @@
         <activity android:name=".ClassOpenCloseActivity"/>
         <activity android:name=".HelperCheckinActivity"/>
         <activity android:name=".HelperScheduleActivity"/>
+        <activity android:name=".LedgerAcceptDialog" android:theme="@android:style/Theme.Dialog"/>
+
     </application>
 
 </manifest>

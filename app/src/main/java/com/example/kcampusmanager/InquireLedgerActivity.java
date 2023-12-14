@@ -1,5 +1,6 @@
 package com.example.kcampusmanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,8 +33,9 @@ public class InquireLedgerActivity extends AppCompatActivity {
         newListView.setAdapter(newLedgerAdapter);
         newListView.setOnItemClickListener((parent, view, position, id) -> {
             LedgerItem selectedLedgerItem = newLedgerAdapter.getItem(position);
-
-            // 다이얼로그 표시
+            Intent intent = new Intent(getApplicationContext(), LedgerAcceptDialog.class);
+            intent.putExtra("breakdown", selectedLedgerItem);
+            startActivity(intent);
         });
 
         List<LedgerItem> previousLedgerItems = getPreviousLedgerItems();
