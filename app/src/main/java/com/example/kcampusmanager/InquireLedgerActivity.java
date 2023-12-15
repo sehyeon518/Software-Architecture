@@ -16,6 +16,10 @@ import java.util.List;
 public class InquireLedgerActivity extends AppCompatActivity {
 
     ImageView back;
+    ListView newListView, previousListView;
+
+    List<LedgerItem> newLedgerItems = getNewLedgerItems();
+    List<LedgerItem> previousLedgerItems = getPreviousLedgerItems();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +31,25 @@ public class InquireLedgerActivity extends AppCompatActivity {
             finish();
         });
 
-        List<LedgerItem> newLedgerItems = getNewLedgerItems();
+
         NewLedgerAdapter newLedgerAdapter = new NewLedgerAdapter(this, newLedgerItems);
-        ListView newListView = findViewById(R.id.listview_ledger_new);
+        PreviousLedgerAdapter previousLedgerAdapter = new PreviousLedgerAdapter(this, previousLedgerItems);
+
+        newListView = findViewById(R.id.listview_ledger_new);
         newListView.setAdapter(newLedgerAdapter);
         newListView.setOnItemClickListener((parent, view, position, id) -> {
             LedgerItem selectedLedgerItem = newLedgerAdapter.getItem(position);
+            newLedgerItems.remove(selectedLedgerItem);
+            selectedLedgerItem.ledgerNumber = 4;
+            selectedLedgerItem.reservationStatus = "승인";
+            previousLedgerItems.add(0, selectedLedgerItem);
             Intent intent = new Intent(getApplicationContext(), LedgerAcceptDialog.class);
             intent.putExtra("breakdown", selectedLedgerItem);
             startActivity(intent);
         });
 
-        List<LedgerItem> previousLedgerItems = getPreviousLedgerItems();
-        PreviousLedgerAdapter previousLedgerAdapter = new PreviousLedgerAdapter(this, previousLedgerItems);
-        ListView previousListView = findViewById(R.id.listview_ledger_history);
+
+        previousListView = findViewById(R.id.listview_ledger_history);
         previousListView.setAdapter(previousLedgerAdapter);
         previousListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -52,6 +61,16 @@ public class InquireLedgerActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        NewLedgerAdapter newLedgerAdapter = new NewLedgerAdapter(this, newLedgerItems);
+        newListView.setAdapter(newLedgerAdapter);
+        PreviousLedgerAdapter previousLedgerAdapter = new PreviousLedgerAdapter(this, previousLedgerItems);
+        previousListView.setAdapter(previousLedgerAdapter);
+    }
+
 
     private List<LedgerItem> getNewLedgerItems() {
         List<LedgerItem> ledgerItems = new ArrayList<>();
