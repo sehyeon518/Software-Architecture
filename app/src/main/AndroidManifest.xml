@@ -36,6 +36,7 @@
         <activity android:name=".HelperCheckinActivity"/>
         <activity android:name=".HelperScheduleActivity"/>
         <activity android:name=".LedgerAcceptDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".LedgerHistoryDialog" android:theme="@android:style/Theme.Dialog"/>
 
     </application>
 

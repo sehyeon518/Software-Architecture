@@ -2,8 +2,6 @@ package com.example.kcampusmanager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -51,13 +49,11 @@ public class InquireLedgerActivity extends AppCompatActivity {
 
         previousListView = findViewById(R.id.listview_ledger_history);
         previousListView.setAdapter(previousLedgerAdapter);
-        previousListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                LedgerItem selectedLedgerITem = newLedgerAdapter.getItem(position);
-
-                // 다이얼로그 표시
-            }
+        previousListView.setOnItemClickListener((parent, view, position, id) -> {
+            LedgerItem selectedLedgerItem = previousLedgerAdapter.getItem(position);
+            Intent intent = new Intent(getApplicationContext(), LedgerHistoryDialog.class);
+            intent.putExtra("breakdown", selectedLedgerItem);
+            startActivity(intent);
         });
 
     }
