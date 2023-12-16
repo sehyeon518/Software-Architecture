@@ -17,6 +17,9 @@ public class LedgerAcceptDialog extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+
+        getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
         setContentView(R.layout.dialog_ledger_new);
 
         ledger_breakdown = findViewById(R.id.ledger_breakdown);
